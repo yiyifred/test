@@ -83,7 +83,7 @@ def main():
             {
         "appToken":"AT_mmtwbWXOSX9TnA1FfdhEtCHK5gwHmYg6",
         "content":"人民日报提醒",
-        "summary":"下载人民日报：用时 {elapsed_time:.2f} 秒。",
+        "summary":f"下载人民日报：用时 {elapsed_time:.2f} 秒。",
         "contentType":1,
         "uids":[
             "UID_XZcjtnAUQrxbKFXq9YhRFMOipRYW"
