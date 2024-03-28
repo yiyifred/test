@@ -6,7 +6,7 @@ from PyPDF2 import PdfMerger
 import requests
 
  
-pdf_folder = r'C:\Users\yiyi\人民日报\1'
+pdf_folder = r'人民日报下载目录'
 today = datetime.date.today()
 formatted_date = today.strftime("%Y-%m/%d")
 filename_num = formatted_date.replace("-", "").replace("/", "")
