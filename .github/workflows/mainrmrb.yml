@@ -14,4 +14,5 @@ jobs:
         with:
           python-version: '3.13.0-alpha.5'
       - run: pip install requests
+      - run: pip install PyPDF2
       - run: python .github/workflows/人民日报.py
