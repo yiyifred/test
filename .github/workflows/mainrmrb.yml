@@ -21,3 +21,4 @@ jobs:
       - run: git add 人民日报下载目录/
       - run: git status -s
       - run: git commit -m "1"
+      - run: git push
