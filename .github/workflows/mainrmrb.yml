@@ -17,7 +17,7 @@ jobs:
       - run: pip install PyPDF2
       - run: python .github/workflows/人民日报.py
       - run: git config --global user.name "yiyifred"
-      - run: git config --global user.email "yiyifred@users.noreply.github.com"
+      - run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
       - run: git add 人民日报下载目录/
       - run: git status -s
       - run: git commit -m "1"
