@@ -1,0 +1,17 @@
+name: 人民日报
+on:
+  workflow_dispatch:
+  schedule:
+    # IMPORTANT: Set cron job in UTC timezone
+    - cron:  '00 10 * * *'
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.13.0-alpha.5'
+      - run: pip install requests
+      - run: python .github/workflows/人民日报.py
