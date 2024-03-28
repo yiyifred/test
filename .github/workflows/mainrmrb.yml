@@ -15,8 +15,6 @@ jobs:
           python-version: '3.13.0-alpha.5'
       - run: pip install requests
       - run: pip install PyPDF2
-      - run: mkdir 人民日报下载目录
-      - run: mkdir cache
       - run: python .github/workflows/人民日报.py
       - run: ls -l /人民日报下载目录
       - run: ls -l /人民日报下载目录/cache
