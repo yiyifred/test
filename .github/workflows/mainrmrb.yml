@@ -16,4 +16,5 @@ jobs:
       - run: pip install requests
       - run: pip install PyPDF2
       - run: python .github/workflows/人民日报.py
-
+      - run: git add 人民日报下载目录
+      - run: git push
