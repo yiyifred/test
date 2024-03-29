@@ -18,7 +18,8 @@ jobs:
       - run: python .github/workflows/人民日报.py
       - run: git config --global user.name "yiyifred"
       - run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
+      - run: git remote set-url origin "https://yiyifred:Changepassword...@github.com/yiyifred/test.git"
       - run: git add 人民日报下载目录/
       - run: git status -s
       - run: git commit -m "1"
-      - run: git push -u
+      - run: git push -u origin master 
