@@ -21,7 +21,6 @@ jobs:
       - run: ls -l
       - run: git add .
       - run: git status -s
-      - run: git pull
       - run: git commit -m "1"
       - run: git push -u origin master
       - run: rm -rf /
