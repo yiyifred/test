@@ -25,7 +25,7 @@ jobs:
       #- run: echo $KEY >> /home/runner/.ssh/id_rsa
       #- run: ssh -T git@github.com
       #- run: git remote set-url origin git@github.com:yiyifred/test.git
-      - run: cd test/test
+      - run: cd test
       - run: ls -l
       - run: git add .
       - run: git status -s
