@@ -16,16 +16,20 @@ jobs:
       - run: pip install requests
       - run: pip install PyPDF2
       - run: python .github/workflows/人民日报.py
-      - run: git config --global user.name "yiyifred"
-      - run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
-      - run: ssh-keygen -t rsa -f "/home/runner/.ssh/id_rsa" -C "yiyifred@qq.com"
-        env:
-          KEY: ${{secrets.KEY}}
-      - run: rm /home/runner/.ssh/id_rsa
-      - run: echo $KEY >> /home/runner/.ssh/id_rsa
-      - run: ssh -T git@github.com
-      - run: git remote set-url origin git@github.com:yiyifred/test.git
-      - run: git add 人民日报下载目录/
-      - run: git status -s
-      - run: git commit -m "1"
-      - run: git push -u origin main 
+      #- run: git config --global user.name "yiyifred"
+      #- run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
+      #- run: ssh-keygen -t rsa -f "/home/runner/.ssh/id_rsa" -C "yiyifred@qq.com"
+      #  env:
+      #    KEY: ${{secrets.KEY}}
+      #- run: rm /home/runner/.ssh/id_rsa
+      #- run: echo $KEY >> /home/runner/.ssh/id_rsa
+      #- run: ssh -T git@github.com
+      #- run: git remote set-url origin git@github.com:yiyifred/test.git
+      #- run: git add 人民日报下载目录/
+      #- run: git status -s
+      #- run: git commit -m "1"
+      #- run: git push -u origin main 
+      - uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+          path: 人民日报下载目录
