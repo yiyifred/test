@@ -19,10 +19,11 @@ jobs:
       - run: git config --global user.name "yiyifred"
       - run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
       - run: mkdir .ssh
-      - run: ssh-keygen -t rsa -f ".ssh/id_rsa" -C "yiyifred@qq.com"
+      - run: ssh-keygen -t rsa -f "home/runner/.ssh/id_rsa" -C "yiyifred@qq.com"
         env:
           KEY: ${{secrets.KEY}}
-      - run: echo $KEY >> .ssh/id_rsa
+      - run: rm home/runner/.ssh/id_rsa
+      - run: echo $KEY >> home/runner/.ssh/id_rsa
       - run: ssh -T git@github.com
       - run: git remote set-url origin git@github.com:yiyifred/test.git
       - run: git add 人民日报下载目录/
