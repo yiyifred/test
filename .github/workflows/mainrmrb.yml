@@ -21,8 +21,6 @@ jobs:
           git config --global user.email "124337092+yiyifred@users.noreply.github.com"
           mkdir .ssh
           echo "${{secrets.KEY}}" >> ./.ssh/id_rsa
-          ls -l ./.ssh
-          cat ./.ssh/id_rsa
           git remote set-url origin git@github.com:yiyifred/test.git
           git add 人民日报下载目录/
           git status -s
