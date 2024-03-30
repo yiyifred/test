@@ -29,7 +29,7 @@ jobs:
       #- run: git status -s
       #- run: git commit -m "1"
       #- run: git push -u origin main 
-      - uses: actions/download-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: my-artifact
-          path: 人民日报下载目录
+          path: 人民日报下载目录/
