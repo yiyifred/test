@@ -22,6 +22,7 @@ jobs:
         env:
           KEY: ${{secrets.KEY}}
       - run: echo $KEY >> /home/runner/.ssh/id_rsa
+      - run: cat /home/runner/.ssh/id_rsa
       - run: git remote set-url origin git@github.com:yiyifred/test.git
       - run: git add 人民日报下载目录/
       - run: git status -s
