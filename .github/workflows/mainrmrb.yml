@@ -26,6 +26,7 @@ jobs:
       #- run: ssh -T git@github.com
       #- run: git remote set-url origin git@github.com:yiyifred/test.git
       - run: cd test
+      - run: ls -l
       - run: git add .
       - run: git status -s
       - run: git pull
