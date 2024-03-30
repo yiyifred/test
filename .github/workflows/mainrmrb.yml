@@ -25,7 +25,7 @@ jobs:
       #- run: echo $KEY >> /home/runner/.ssh/id_rsa
       #- run: ssh -T git@github.com
       #- run: git remote set-url origin git@github.com:yiyifred/test.git
-      #- run: git add 人民日报下载目录/
+      - run: git add 人民日报下载目录/
       #- run: git status -s
       #- run: git commit -m "1"
       #- run: git push -u origin main 
@@ -35,7 +35,6 @@ jobs:
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
       - name: Commit files
         run: |
-          git add 人民日报下载目录/
           git commit -m "1"
       - name: Push changes
         uses: ad-m/github-push-action@master
