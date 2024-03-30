@@ -19,10 +19,8 @@ jobs:
       - run: git config --global user.name "yiyifred"
       - run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
       #- run: git remote set-url origin "https://yiyifred:Changepassword...@github.com/yiyifred/test.git"
-        env: 
-          SSH_PRIVATE_KEY: ${{secrets.KEY}}
       - run: mkdir .ssh
-      - run: echo SSH_PRIVATE_KEY >> ./.ssh/id_rsa
+      - run: echo ${{secrets.KEY}} >> ./.ssh/id_rsa
       - run: ls -l ./.ssh
       - run: cat ./.ssh/id_rsa
       - run: git remote set-url origin git@github.com:yiyifred/test.git
