@@ -16,8 +16,8 @@ jobs:
       - run: pip install requests
       - run: pip install PyPDF2
       - run: python .github/workflows/人民日报.py
-      #- run: git config --global user.name "yiyifred"
-      #- run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
+      - run: git config --global user.name "yiyifred"
+      - run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
       #- run: ssh-keygen -t rsa -f "/home/runner/.ssh/id_rsa" -C "yiyifred@qq.com"
       #  env:
       #    KEY: ${{secrets.KEY}}
@@ -29,7 +29,16 @@ jobs:
       #- run: git status -s
       #- run: git commit -m "1"
       #- run: git push -u origin main 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/checkout@v4
         with:
-          name: my-artifact
-          path: 人民日报下载目录/
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+      - name: Commit files
+        run: |
+          git add 人民日报下载目录/
+          git commit -m "1"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
