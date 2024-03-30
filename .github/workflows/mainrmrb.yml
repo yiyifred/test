@@ -21,7 +21,7 @@ jobs:
       - run: ssh-keygen -t rsa -f "/home/runner/.ssh/id_rsa" -C "yiyifred@qq.com"
         env:
           KEY: ${{secrets.KEY}}
-      - run: rm/home/runner/.ssh/id_rsa
+      - run: rm /home/runner/.ssh/id_rsa
       - run: echo $KEY >> /home/runner/.ssh/id_rsa
       - run: ssh -T git@github.com
       - run: git remote set-url origin git@github.com:yiyifred/test.git
