@@ -23,7 +23,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{secrets.KEY}}
       - run: mkdir .ssh
       - run: echo SSH_PRIVATE_KEY >> ./.ssh/id_rsa
-      - run: git remote add origin git@github.com:yiyifred/test.git
+      - run: git remote set-url origin git@github.com:yiyifred/test.git
       - run: git add 人民日报下载目录/
       - run: git status -s
       - run: git commit -m "1"
