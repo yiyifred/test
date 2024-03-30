@@ -18,11 +18,10 @@ jobs:
       - run: python .github/workflows/人民日报.py
       - run: git config --global user.name "yiyifred"
       - run: git config --global user.email "124337092+yiyifred@users.noreply.github.com"
-      - run: ssh-keygen -t rsa -C "yiyifred@qq.com"
+      - run: ssh-keygen -t rsa -f "/home/runner/.ssh/id_rsa"-C "yiyifred@qq.com"
         env:
           KEY: ${{secrets.KEY}}
-      - run: echo "$KEY" >> ./.ssh/id_rsa
-      - run: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUMk0nRbeJTrqPkX+mSh384yW4L/GISqUJbbmCjIutrv+YxfK4SoKznLYqikg9o7YHA8v9axba/RVxLZoSgSSkMrwvWbJQ5LJeTf5WliIB7yWaP48LBvaFJJCL4bPYe2kIKf78Zio9Iwwsi1gjtJ1600ms53E+xmZp7o4n/jMN50M/bpYnhk1Sc0YynsJw8sUI0M3W608c4MehBxs+I7ciJfz98RojaunPZO4iSUHvuDiuFkQsmk8cebRyys9J4o+dHdMVZJ2ApTaDfhDbe2yyRsNBdcdhS9yr4CSxwQ4Z/cTXUtOTED1fc2dSeGKi7bTLzHKG4p81LGxvqQNSfGvT7/p/ERyvupYRPGEAzEGe/fihrArWPkPxz9bopVhBIzfQ+wd099ni2utzBUlrVWgrnrH+D1ofZF8ZJWAQadOJRu8WItiyPNOenZixmn8+fJeqXUqBlE4OPsbJ+OL173CdPlQVcBS+XphyUGicvBwb5waeA7iWkagGSDN76tBxU8c= yiyifred@qq.com" >> ./.ssh/id_rsa.pub
+      - run: echo "$KEY" >> /home/runner/.ssh/id_rsa
       - run: git remote set-url origin git@github.com:yiyifred/test.git
       - run: git add 人民日报下载目录/
       - run: git status -s
