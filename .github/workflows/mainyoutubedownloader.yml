@@ -1,0 +1,26 @@
+name: 人民日报
+on:
+  workflow_dispatch:
+  
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.13.0-alpha.5'
+      - run: |
+            python3 -m pip install -U --pre yt-dlp[default]
+            cd YouTubeDownload
+            yt-dlp.exe --downloader aria2c --downloader-args aria2c:"-c --max-tries=0 -k 1M -j 40" --no-check-certificate -f "bv[ext=mp4][height<=1080]+ba[ext=m4a]" --write-auto-subs --sub-langs "en" --sub-format "srt" --convert-sub "srt" --cookies-from-browser "chrome" -F "https://www.youtube.com/@griffpatch/playlists"
+      - run: |
+            git config --global user.name "yiyifred"
+            git config --global user.email "124337092+yiyifred@users.noreply.github.com"
+      - run: |
+            ls -l
+            git add .
+            git status -s
+            git commit -m "1"
+            git push -u origin master
+  
