@@ -1,4 +1,4 @@
-name: YouTubeDownloader
+name: speedtest
 on:
   workflow_dispatch:
   
@@ -12,16 +12,7 @@ jobs:
           python-version: '3.13.0-alpha.5'
       - run: |
             sudo apt-get update
-            sudo apt install yt-dlp
+            sudo apt install speedtest-cli
             cd YouTubeDownload
-            yt-dlp --no-check-certificate -f "bv[ext=mp4][height<=1080]+ba[ext=m4a]" --write-auto-subs --sub-langs "en" --sub-format "srt" --convert-sub "srt" -F "https://www.youtube.com/@griffpatch/playlists"
-      - run: |
-            git config --global user.name "yiyifred"
-            git config --global user.email "124337092+yiyifred@users.noreply.github.com"
-      - run: |
-            ls -l
-            git add .
-            git status -s
-            git commit -m "1"
-            git push -u origin master
+            speedtest
   
