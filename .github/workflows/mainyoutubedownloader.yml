@@ -11,7 +11,7 @@ jobs:
         with:
           python-version: '3.13.0-alpha.5'
       - run: |
-            sudo apt install yt - dlp
+            sudo apt install yt-dlp
             cd YouTubeDownload
             yt-dlp.exe --no-check-certificate -f "bv[ext=mp4][height<=1080]+ba[ext=m4a]" --write-auto-subs --sub-langs "en" --sub-format "srt" --convert-sub "srt" --cookies-from-browser "chrome" -F "https://www.youtube.com/@griffpatch/playlists"
       - run: |
