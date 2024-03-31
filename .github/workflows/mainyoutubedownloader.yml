@@ -11,9 +11,9 @@ jobs:
         with:
           python-version: '3.13.0-alpha.5'
       - run: |
-            python3 -m pip install -U --pre yt-dlp[default]
+            sudo apt install yt - dlp
             cd YouTubeDownload
-            yt-dlp.exe --downloader aria2c --downloader-args aria2c:"-c --max-tries=0 -k 1M -j 40" --no-check-certificate -f "bv[ext=mp4][height<=1080]+ba[ext=m4a]" --write-auto-subs --sub-langs "en" --sub-format "srt" --convert-sub "srt" --cookies-from-browser "chrome" -F "https://www.youtube.com/@griffpatch/playlists"
+            yt-dlp.exe --no-check-certificate -f "bv[ext=mp4][height<=1080]+ba[ext=m4a]" --write-auto-subs --sub-langs "en" --sub-format "srt" --convert-sub "srt" --cookies-from-browser "chrome" -F "https://www.youtube.com/@griffpatch/playlists"
       - run: |
             git config --global user.name "yiyifred"
             git config --global user.email "124337092+yiyifred@users.noreply.github.com"
