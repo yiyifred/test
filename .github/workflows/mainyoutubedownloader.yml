@@ -9,5 +9,5 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
             sudo apt install speedtest-cli
-            sudo speedtest -u
+            sudo speedtest-cli --share
   
