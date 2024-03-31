@@ -1,4 +1,4 @@
-name: 人民日报
+name: YouTubeDownloader
 on:
   workflow_dispatch:
   
