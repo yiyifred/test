@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-            apt install speedtest-cli
-            speedtest -u
+            sudo apt install speedtest-cli
+            sudo speedtest -u
   
