@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # IMPORTANT: Set cron job in UTC timezone
-    - cron:  '20 11 * * *'
+    - cron:  '00 11 * * *'
 
 jobs:
   run-python-script:
@@ -13,5 +13,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.13.0-alpha.5'
-      - run: pip install requests
+      - run: |
+             pip install requests
+             pip install chinese_calendar
       - run: python .github/workflows/test.py
