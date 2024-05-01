@@ -27,7 +27,7 @@ message=f"距离暑假剩余工作日天数:{formatted_time}天"
 # 构建请求体并发送请求  
 # 确保替换YOUR_APP_TOKEN和YOUR_UID为你从wxpusher获取的实际值  
 appToken = "AT_mmtwbWXOSX9TnA1FfdhEtCHK5gwHmYg6"  
-uids = ["UID_XZcjtnAUQrxbKFXq9YhRFMOipRYW"]  # 可以是多个UID组成的列表  
+uids = ["UID_XZcjtnAUQrxbKFXq9YhRFMOipRYW","UID_Uknh75VHaA2nNOoJ395mFlDM1sFq"]  # 可以是多个UID组成的列表  
   
 body = {  
     "appToken": appToken,  
