@@ -13,21 +13,25 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.13.0-alpha.5'
-      - run: pip安装python所需要的包|
-             pip install requests
-             pip install chinese_calendar
-             pip install requests
-             pip install PyPDF2
-      - run: python-下载人民日报|
-             python .github/workflows/人民日报.py
-             git config --global user.name "yiyifred"
-             git config --global user.email "124337092+yiyifred@users.noreply.github.com"
-             ls -l
-             git add .
-             git status -s
-             git commit -m "1"
-             it push -u origin master
-      - run: python-距离期末考试天数|
-            python .github/workflows/test.py
-      - run: python-保卫萝卜提醒|
-            python .github/workflows/bwlb.py
+      - name: pip安装python所需要的包
+        run: |
+          pip install requests
+          pip install chinese_calendar
+          pip install requests
+          pip install PyPDF2
+      - name: python-下载人民日报
+        run: |
+          python .github/workflows/人民日报.py
+          git config --global user.name "yiyifred"
+          git config --global user.email "124337092+yiyifred@users.noreply.github.com"
+          ls -l
+          git add .
+          git status -s
+          git commit -m "1"
+          it push -u origin master
+      - name: python-距离期末考试天数
+        run: |
+          python .github/workflows/test.py
+      - name: python-保卫萝卜提醒|
+        run: |
+          python .github/workflows/bwlb.py
