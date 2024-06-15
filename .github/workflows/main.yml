@@ -24,11 +24,10 @@ jobs:
           python .github/workflows/人民日报.py
           git config --global user.name "yiyifred"
           git config --global user.email "124337092+yiyifred@users.noreply.github.com"
-          ls -l
           git add .
           git status -s
           git commit -m "1"
-          it push -u origin master
+          git push -u origin master
       - name: python-距离期末考试天数
         run: |
           python .github/workflows/test.py
