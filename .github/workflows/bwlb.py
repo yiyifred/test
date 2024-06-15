@@ -75,19 +75,13 @@ people2=(f"ID：{id}，用户名：{name}，渠道：{channel}，关卡挑战：
 nowtime=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 all=f"{str(nowtime)}\n{people1}\n{people2}ok"
 appToken = "AT_AGx1teOAFaGOuXUSl152QARxY6esRJ3Z"
-uidres=requests.get("https://wxpusher.zjiecode.com/api/fun/wxuser/v2?appToken="+appToken)
-uids=str(uidres.text)
-data = json.loads(uids)
-records = data["data"]["records"]
-for i in records:
-    uid=i["uid"]
-    print(uid)
-    body = {  
-        "appToken": appToken,  
-        "content": all,  
-        "summary": "保卫萝卜提醒",  
-        "contentType": 2,  
-        "uids": [uid]
-    }  
-    response = requests.post("https://wxpusher.zjiecode.com/api/send/message/", json=body)  
-    print(response.text)
+uid="UID_XZcjtnAUQrxbKFXq9YhRFMOipRYW"
+body = {  
+    "appToken": appToken,  
+    "content": all,  
+    "summary": "保卫萝卜提醒",  
+    "contentType": 2,  
+    "uids": uid
+}  
+response = requests.post("https://wxpusher.zjiecode.com/api/send/message/", json=body)  
+print(response.text)
