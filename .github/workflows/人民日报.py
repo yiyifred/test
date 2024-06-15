@@ -4,7 +4,7 @@ import time
 import requests
 from PyPDF2 import PdfMerger
 import requests
-
+import shutil
  
 pdf_folder = r'人民日报下载目录'
 today = datetime.date.today()
@@ -79,18 +79,19 @@ def main():
         # 计算并打印运行时间
         elapsed_time = end_time - start_time
         print(f"总共下载PDF文件，用时 {elapsed_time:.2f} 秒。")
-        body=\
-            {
-        "appToken":"AT_mmtwbWXOSX9TnA1FfdhEtCHK5gwHmYg6",
-        "content":"人民日报提醒",
-        "summary":f"下载人民日报：用时 {elapsed_time:.2f} 秒。",
-        "contentType":1,
-        "uids":[
-            "UID_XZcjtnAUQrxbKFXq9YhRFMOipRYW"
-        ],
-            }
-        r=requests.post("https://wxpusher.zjiecode.com/api/send/message/",json=body)
-        print(r.text)
+        shutil.rmtree(pdf_cache)
+        # body=\
+        #     {
+        # "appToken":"AT_mmtwbWXOSX9TnA1FfdhEtCHK5gwHmYg6",
+        # "content":"人民日报提醒",
+        # "summary":f"下载人民日报：用时 {elapsed_time:.2f} 秒。",
+        # "contentType":1,
+        # "uids":[
+        #     "UID_XZcjtnAUQrxbKFXq9YhRFMOipRYW"
+        # ],
+        #     }
+        # r=requests.post("https://wxpusher.zjiecode.com/api/send/message/",json=body)
+        # print(r.text)
     except Exception as e:
         line_err = f'error line:{e.__traceback__.tb_lineno}'
         print(f"异常行-{line_err}  异常信息：{str(e)}")
