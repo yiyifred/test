@@ -81,7 +81,7 @@ body = {
     "content": all,  
     "summary": "保卫萝卜提醒",  
     "contentType": 2,  
-    "uids": uid
+    "uids": [uid]
 }  
 response = requests.post("https://wxpusher.zjiecode.com/api/send/message/", json=body)  
 print(response.text)
