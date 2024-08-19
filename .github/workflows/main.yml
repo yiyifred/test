@@ -31,6 +31,6 @@ jobs:
       - name: python-距离期末考试天数
         run: |
           python .github/workflows/test.py
-      - name: python-保卫萝卜提醒|
+      - name: python-保卫萝卜提醒(弃用)
         run: |
-          python .github/workflows/bwlb.py
+          #python .github/workflows/bwlb.py
