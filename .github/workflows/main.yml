@@ -16,8 +16,6 @@ jobs:
       - name: pip安装python所需要的包
         run: |
           pip install requests
-          pip install chinese_calendar
-          pip install requests
           pip install PyPDF2
       - name: python-下载人民日报
         run: |
