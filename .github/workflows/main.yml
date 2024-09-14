@@ -17,6 +17,12 @@ jobs:
         run: |
           pip install requests
           pip install PyPDF2
+      - name: python-距离期末考试天数
+        run: |
+          python .github/workflows/test.py
+      - name: python-保卫萝卜提醒(弃用)
+        run: |
+          #python .github/workflows/bwlb.py
       - name: python-下载人民日报
         run: |
           python .github/workflows/人民日报.py
@@ -26,9 +32,3 @@ jobs:
           git status -s
           git commit -m "1"
           git push -u origin master
-      - name: python-距离期末考试天数
-        run: |
-          python .github/workflows/test.py
-      - name: python-保卫萝卜提醒(弃用)
-        run: |
-          #python .github/workflows/bwlb.py
