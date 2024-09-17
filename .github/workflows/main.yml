@@ -17,6 +17,7 @@ jobs:
         run: |
           pip install requests
           pip install PyPDF2
+          pip install chinesecalendar
       - name: python-距离期末考试天数
         run: |
           python .github/workflows/test.py
