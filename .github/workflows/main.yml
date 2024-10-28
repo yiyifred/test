@@ -24,12 +24,12 @@ jobs:
       - name: python-保卫萝卜提醒(弃用)
         run: |
           #python .github/workflows/bwlb.py
-      - name: python-下载人民日报
-        run: |
-          python .github/workflows/人民日报.py
-          git config --global user.name "yiyifred"
-          git config --global user.email "124337092+yiyifred@users.noreply.github.com"
-          git add .
-          git status -s
-          git commit -m "1"
-          git push -u origin master
+      #- name: python-下载人民日报
+        #run: |
+          #python .github/workflows/人民日报.py
+          #git config --global user.name "yiyifred"
+          #git config --global user.email "124337092+yiyifred@users.noreply.github.com"
+          #git add .
+          #git status -s
+          #git commit -m "1"
+          #git push -u origin master
