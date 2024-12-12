@@ -1,0 +1,21 @@
+name: wxpusher
+on:
+  workflow_dispatch:
+  schedule:
+    # IMPORTANT: Set cron job in UTC timezone
+    - cron:  '00 11 * * *'
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name:
+        #run: |
+          #python .github/workflows/人民日报.py
+          #git config --global user.name "yiyifred"
+          #git config --global user.email "124337092+yiyifred@users.noreply.github.com"
+          #git add .
+          #git status -s
+          #git commit -m "1"
+          #git push -u origin master
