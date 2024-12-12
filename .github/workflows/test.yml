@@ -1,9 +1,6 @@
-name: wxpusher
+name: test
 on:
   workflow_dispatch:
-  schedule:
-    # IMPORTANT: Set cron job in UTC timezone
-    - cron:  '00 11 * * *'
 
 jobs:
   run-python-script:
