@@ -11,7 +11,7 @@ jobs:
         run: |
           git config --global user.name "yiyifred"
           git config --global user.email "124337092+yiyifred@users.noreply.github.com"
-          git rm 人民日报下载目录
+          git rm -r ./人民日报下载目录/*
           git add .
           git status -s
           git commit -m "1"
