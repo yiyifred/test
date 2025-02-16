@@ -55,7 +55,7 @@ now = datetime.now()
 print(f"当前时间：{now.strftime('%Y-%m-%d %H:%M:%S')}")
 
 # 目标日期
-target_date = datetime(2025, 1, 13)
+target_date = datetime(2025, 6, 20)
 
 # 初始化工作日计数
 work_days = 0
